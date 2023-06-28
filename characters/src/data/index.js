@@ -4,4 +4,7 @@ module.exports = {
   list: () => {
     return characters;
   },
+  createCharacter: (newCharacter) => {
+    return characters;
+  },
 };

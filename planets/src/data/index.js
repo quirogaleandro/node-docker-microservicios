@@ -4,4 +4,7 @@ module.exports = {
   listPlanets: () => {
     return planets;
   },
+  createPlanet: () => {
+    return "New Planets" + planets[0];
+  },
 };

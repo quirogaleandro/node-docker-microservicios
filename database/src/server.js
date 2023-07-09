@@ -6,4 +6,10 @@ const server = express();
 server.use(express.json());
 server.use(morgan("dev"));
 
+server.use(require("./routes"));
+
+server.use((err, req, res, next) => {
+  res.status(err.statusCode).send(err.message);
+});
+
 module.exports = server;

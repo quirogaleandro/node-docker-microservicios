@@ -13,7 +13,8 @@ server.use("*", (req, res) => {
 });
 
 server.use((err, req, res, next) => {
-  res.status(err.statusCode).send(err.message);
+  // res.status(err.statusCode).send(err.message);
+  console.log("err server " + err.statusCode);
 });
 
 module.exports = server;

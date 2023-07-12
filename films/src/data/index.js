@@ -1,9 +1,10 @@
-const ClientError = require("../utils/errors");
 const films = require("./films.json");
+const axios = require("axios");
 
 module.exports = {
-  listFilms: () => {
-    return films;
+  list: async () => {
+    const films = await axios.get("http://database:8004/Film");
+    return films.data;
   },
   createFilms: (name) => {
     return films;

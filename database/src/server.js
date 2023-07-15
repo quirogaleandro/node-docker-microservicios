@@ -15,8 +15,9 @@ server.use("*", (req, res) => {
 server.use((err, req, res, next) => {
   if (err.name === "MongoServerError" && err.code === 11000) {
     res.status(err.statusCode || 409).send("The element already exists");
+  } else {
+    res.status(err.statusCode || 500).send(err.message);
   }
-  res.status(err.statusCode || 500).send(err.message);
 });
 
 module.exports = server;

@@ -6,7 +6,13 @@ module.exports = {
     const films = await axios.get("http://database:8004/Film");
     return films.data;
   },
-  createFilms: (name) => {
-    return films;
+  create: async (film) => {
+    try {
+      const films = await axios.post("http://database:8004/Film", film);
+      return films.data;
+    } catch (error) {
+      console.error(error);
+      throw new Error("Error creating film");
+    }
   },
 };

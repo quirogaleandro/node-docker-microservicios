@@ -4,7 +4,7 @@ const middlewares = require("../middlewares");
 
 const characterRouter = Router();
 
-characterRouter.get("/", controllers.getCharacter);
+characterRouter.get("/characters", controllers.getCharacter);
 characterRouter.post(
   "/",
   middlewares.characterValidation,
